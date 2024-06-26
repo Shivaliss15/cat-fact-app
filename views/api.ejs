@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/main.css">
+  <title>I'm Bored</title>
+</head>
+
+<body>
+  
+<div class="parent">
+  <div class=child>
+    <div class="breed ">
+      
+        <h1>Let's see various types of breeds</h1>
+    
+        <form action="/" id="form" class="form" method="POST">
+          <select name="page" class="form-select">
+            <option value="" data-display="Select" class="formfont">Random page</option>
+            <option value="1">page-1</option>
+            <option value="2">page-2</option>
+            <option value="3">page-3</option>
+            <option value="4">page-4</option>
+            <option value="5">page-5</option>
+            <option value="6">page-6</option>
+            <option value="7">page-7</option>
+            <option value="8">page-8</option>
+            <option value="9">page-9</option>
+            <option value="10">page-10</option>
+          </select>
+          <select name="limit" class="form-select">
+            <option value="" class="formfont">Limit</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+          <button type="submit" class="form-submit">Go</button>
+        </form>
+     
+
+      
+        <section id="cards" class="cards">
+    
+          <% if(locals.cat) {%>
+          <article class="card-item">
+            <h2 class="card-activity">
+              <!-- Show Activity -->
+               <%= cat.breed%>
+            </h2>
+            <div class="card-info">
+              <span class="card-type">
+                <!-- Show Activity type -->
+              COUNTRY:<%= cat.country %>
+              </span>
+              <span class="card-participants">
+                <!-- participants: Show participant number -->
+              ORIGIN: <%= cat.origin %> 
+                <span class="card-number"></span>
+              </span>
+            </div>
+          </article>
+        <% } %>
+        <%if (locals.error) {%>
+          <div id="tag-error" class="tag-error">
+            <!-- Show any errors that were sent from the backend -->
+             <%= error %>
+          </div>
+        <% } %>
+        </section>
+      
+
+    </div>
+  </div>
+
+                                                           <!-- cat fact      --> 
+
+  <div  class="cat-fact child">                                                      
+    <h2  class="interseting">Intesresting Cat-Fact?</h2>
+      <div class="card">
+        <p>
+          <%=fact %>
+        </p>
+      </div>
+    <p class="user">
+      <%=length %>
+    </p>
+  </div>   
+</div>  
+
+</body>
+
+</html>
